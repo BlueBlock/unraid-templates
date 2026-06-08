@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>x265-butler</Name>
-  <Repository>ghcr.io/masterjb/x265-butler:latest</Repository>
-  <Registry>https://github.com/users/masterjb/packages/container/package/x265-butler</Registry>
+  <Repository>ghcr.io/blueblock/x265-butler:latest</Repository>
+  <Registry>https://github.com/users/BlueBlock/packages/container/package/x265-butler</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
