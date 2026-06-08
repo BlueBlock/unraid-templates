@@ -57,7 +57,7 @@
   <Config Name="Config" Target="/config" Default="/mnt/user/appdata/x265-butler" Mode="rw" Description="Persistent config + database directory" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="User ID (typically 99 on unRAID)" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Group ID (typically 100 on unRAID)" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
-  <Config Name="TZ" Target="TZ" Default="Europe/Berlin" Mode="" Description="Container timezone" Type="Variable" Display="advanced" Required="false" Mask="false">Europe/Berlin</Config>
+  <Config Name="TZ" Target="TZ" Default="America/New_York" Mode="" Description="Container timezone" Type="Variable" Display="advanced" Required="false" Mask="false">America/New_York</Config>
   <Config Name="AUTH_ENABLED" Target="AUTH_ENABLED" Default="false" Mode="" Description="Enable built-in username/password auth" Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
   <Config Name="DEFAULT_LOCALE" Target="DEFAULT_LOCALE" Default="en" Mode="" Description="Default UI locale (en or de)" Type="Variable" Display="advanced" Required="false" Mask="false">en</Config>
   <Config Name="Render Device" Target="/dev/dri" Default="/dev/dri" Mode="rw" Description="Device pass-through for Intel/AMD hardware encoding" Type="Device" Display="advanced" Required="false" Mask="false"/>
