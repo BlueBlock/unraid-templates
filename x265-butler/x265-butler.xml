@@ -22,11 +22,11 @@
     See full release notes:&#xD;
     https://github.com/masterjb/x265-butler/blob/main/CHANGELOG.md&#xD;
     &#xD;
-    [!] Auto-update notice: This template now uses the :latest image tag,&#xD;
-    which auto-deploys every release including potentially-breaking Major&#xD;
-    version transitions (v2.x to v3.x). For production stability, edit the&#xD;
-    Container's Repository field to pin an exact version (e.g.&#xD;
-    ghcr.io/masterjb/x265-butler:2.16.0). Release notes for every version:&#xD;
+    [!] Auto-update notice: This template uses the :latest image tag, which&#xD;
+    auto-deploys every release including potentially-breaking Major version&#xD;
+    transitions. For production stability, pin an exact version in the&#xD;
+    Repository field (e.g. ghcr.io/masterjb/x265-butler:2.25.0).&#xD;
+    Release notes for every version:&#xD;
     https://github.com/masterjb/x265-butler/blob/main/CHANGELOG.md&#xD;
     &#xD;
     Live release feed (all versions):&#xD;
@@ -34,8 +34,8 @@
   </Overview>
   <Category>MediaApp:Video Productivity:</Category>
   <WebUI>http://[IP]:[PORT:3000]/</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/masterjb/unraid-templates/main/x265-butler/x265-butler.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/masterjb/unraid-templates/main/x265-butler/icon.png</Icon>
+  <TemplateURL>https://raw.githubusercontent.com/BlueBlock/unraid-templates/main/x265-butler/x265-butler.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/BlueBlock/unraid-templates/main/x265-butler/icon.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
@@ -43,17 +43,24 @@
   <DonateText/>
   <DonateLink/>
   <Description>
-    HEVC transcoding for unRAID — set-and-forget background re-encode of your library
+    HEVC transcoding for unRAID — set-and-forget background re-encode of your media
     shares to x265. Dashboard, encoder benchmarks, profile editor, auto-scan, multi-share.
     Full changelog: https://github.com/masterjb/x265-butler/blob/main/CHANGELOG.md
   </Description>
   <Version>2.25.0</Version>
-  <Date>2026-06-04</Date>
+  <Date>2026-06-08</Date>
   <Changes>https://github.com/masterjb/x265-butler/blob/main/CHANGELOG.md</Changes>
   <Config Name="WebUI Port" Target="3000" Default="3000" Mode="tcp" Description="HTTP port for the x265-butler dashboard" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
-  <Config Name="Library" Target="/library" Default="/mnt/user/Media" Mode="rw" Description="Path containing video files to scan + transcode" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Media (Read)" Target="/media" Default="/mnt/user/Media" Mode="ro" Description="Media library path used for scan/read operations" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Media0 (Write)" Target="/media0" Default="/mnt/user0/Media" Mode="rw" Description="Write path matching /media for output (user0 bypasses shfs)" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Cache" Target="/cache" Default="/mnt/cache/x265-butler" Mode="rw" Description="Scratch cache pool path used during encoding" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Config" Target="/config" Default="/mnt/user/appdata/x265-butler" Mode="rw" Description="Persistent config + database directory" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="User ID (typically 99 on unRAID)" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Group ID (typically 100 on unRAID)" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
   <Config Name="TZ" Target="TZ" Default="Europe/Berlin" Mode="" Description="Container timezone" Type="Variable" Display="advanced" Required="false" Mask="false">Europe/Berlin</Config>
+  <Config Name="AUTH_ENABLED" Target="AUTH_ENABLED" Default="false" Mode="" Description="Enable built-in username/password auth" Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <Config Name="DEFAULT_LOCALE" Target="DEFAULT_LOCALE" Default="en" Mode="" Description="Default UI locale (en or de)" Type="Variable" Display="advanced" Required="false" Mask="false">en</Config>
+  <Config Name="Render Device" Target="/dev/dri" Default="/dev/dri" Mode="rw" Description="Device pass-through for Intel/AMD hardware encoding" Type="Device" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="NVIDIA_VISIBLE_DEVICES" Target="NVIDIA_VISIBLE_DEVICES" Default="all" Mode="" Description="Set to all when using NVIDIA runtime" Type="Variable" Display="advanced" Required="false" Mask="false">all</Config>
+  <Config Name="NVIDIA_DRIVER_CAPABILITIES" Target="NVIDIA_DRIVER_CAPABILITIES" Default="compute,video,utility" Mode="" Description="Include video capability for NVENC" Type="Variable" Display="advanced" Required="false" Mask="false">compute,video,utility</Config>
 </Container>
