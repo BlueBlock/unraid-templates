@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>x265-butler</Name>
-  <Repository>ghcr.io/blueblock/x265-butler:latest</Repository>
-  <Registry>https://github.com/users/BlueBlock/packages/container/package/x265-butler</Registry>
+  <Repository>gitea.corp.aspitel.com/dbullock/x265-butler:latest</Repository>
+  <Registry>https://gitea.corp.aspitel.com/dbullock/-/packages/container/x265-butler</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/182094-support-human-126094-docker-templates/</Support>
-  <Project>https://github.com/masterjb/x265-butler</Project>
+  <Project>https://gitea.corp.aspitel.com/dbullock/x265-butler</Project>
   <Overview>
     x265-butler reclaims disk space on unRAID by automatically transcoding video files
     to HEVC (x265). Scans library shares for non-x265 files, transcodes them in the
@@ -20,22 +20,22 @@
     Storage-Analyzer / Auto-Scan-on-Change.&#xD;
     &#xD;
     See full release notes:&#xD;
-    https://github.com/masterjb/x265-butler/blob/main/CHANGELOG.md&#xD;
+    https://gitea.corp.aspitel.com/dbullock/x265-butler/src/branch/main/CHANGELOG.md&#xD;
     &#xD;
     [!] Auto-update notice: This template uses the :latest image tag, which&#xD;
     auto-deploys every release including potentially-breaking Major version&#xD;
     transitions. For production stability, pin an exact version in the&#xD;
-    Repository field (e.g. ghcr.io/masterjb/x265-butler:2.25.0).&#xD;
+    Repository field (e.g. gitea.corp.aspitel.com/dbullock/x265-butler:2.25.0).&#xD;
     Release notes for every version:&#xD;
-    https://github.com/masterjb/x265-butler/blob/main/CHANGELOG.md&#xD;
+    https://gitea.corp.aspitel.com/dbullock/x265-butler/src/branch/main/CHANGELOG.md&#xD;
     &#xD;
     Live release feed (all versions):&#xD;
-    https://github.com/masterjb/x265-butler/blob/main/CHANGELOG.md
+    https://gitea.corp.aspitel.com/dbullock/x265-butler/src/branch/main/CHANGELOG.md
   </Overview>
   <Category>MediaApp:Video Productivity:</Category>
   <WebUI>http://[IP]:[PORT:3000]/</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/BlueBlock/unraid-templates/main/x265-butler/x265-butler.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/BlueBlock/unraid-templates/main/x265-butler/icon.png</Icon>
+  <TemplateURL>https://gitea.corp.aspitel.com/dbullock/unraid-templates/raw/branch/main/x265-butler/x265-butler.xml</TemplateURL>
+  <Icon>https://gitea.corp.aspitel.com/dbullock/unraid-templates/raw/branch/main/x265-butler/icon.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
@@ -45,11 +45,11 @@
   <Description>
     HEVC transcoding for unRAID — set-and-forget background re-encode of your media
     shares to x265. Dashboard, encoder benchmarks, profile editor, auto-scan, multi-share.
-    Full changelog: https://github.com/masterjb/x265-butler/blob/main/CHANGELOG.md
+    Full changelog: https://gitea.corp.aspitel.com/dbullock/x265-butler/src/branch/main/CHANGELOG.md
   </Description>
   <Version>2.25.1</Version>
   <Date>2026-06-08</Date>
-  <Changes>https://github.com/masterjb/x265-butler/blob/main/CHANGELOG.md</Changes>
+  <Changes>https://gitea.corp.aspitel.com/dbullock/x265-butler/src/branch/main/CHANGELOG.md</Changes>
   <Config Name="WebUI Port" Target="3000" Default="3000" Mode="tcp" Description="HTTP port for the x265-butler dashboard" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
   <Config Name="Library" Target="/library" Default="/mnt/user/Media" Mode="rw" Description="Path containing video files to scan + transcode" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Cache" Target="/cache" Default="/mnt/cache/x265-butler" Mode="rw" Description="Scratch cache pool path used during encoding" Type="Path" Display="always" Required="true" Mask="false"/>
