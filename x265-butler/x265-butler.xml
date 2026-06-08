@@ -34,7 +34,7 @@
   </Overview>
   <Category>MediaApp:Video Productivity:</Category>
   <WebUI>http://[IP]:[PORT:3000]/</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/BlueBlock/unraid-templates/chore/x265-template-library-tz-defaults/x265-butler/x265-butler.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/BlueBlock/unraid-templates/main/x265-butler/x265-butler.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/BlueBlock/unraid-templates/main/x265-butler/icon.png</Icon>
   <ExtraParams/>
   <PostArgs/>
